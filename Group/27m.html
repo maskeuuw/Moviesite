@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Movie Site</title>
+    <style>
+        *{
+            margin: 0;
+            background-color: black;
+        }
+        body{
+            font-family: 'Roboto',sans-serif;
+        }
+        .navbar{
+            width: 100%;
+            height: 50px;
+            background: black;
+        }
+        .navbar-container{
+            display: flex;
+            align-items: center;
+            padding: 0 50px;
+            height: 100%;
+            color: white;
+            font-family: 'Sen',sans-serif;
+        }
+        .logo-container{
+            flex: 1;
+        }
+        .logo{
+            font-family: 'Sen',sans-serif;
+            font-size: 30px;
+            color: red;
+        }
+         .menu-container{
+            flex: 6;
+        }
+        .menu-list{
+            display: flex;
+            list-style: none;
+        }
+        .menu-list-item{
+            margin-right:30px ;
+        }
+        .menu-list-item.active{
+            font-weight: bold;
+        }
+         .profile-container{
+            flex: 2;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .profile-text-container{
+            margin: 0 20px;
+        }
+        .sidebar{
+            width: 50px;
+            height: 100%;
+            background: black;
+            position: fixed;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 60px;
+        }
+        .toggle{
+            width: 40px;
+            height: 20px;
+            background: white;
+            border-radius: 30px;
+            display: flex;
+            justify-content:space-around ;
+            align-items: center;
+            position: relative;
+        }
+        .toggle-icon{
+            color: goldenrod;
+
+        }
+        .toggle-ball{
+            width: 18px;
+            height: 18px;
+            background: black;
+            position: absolute;
+            right: 1px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .profile-picture{
+            width: 33px;
+            height: 33px;
+            border-radius: 50%;
+            object-fit: cover;
+
+        }
+        .left-menu-icon{
+            color: white;
+            font-size: 20px;
+            margin-bottom: 30px;
+            margin-bottom: 60px;
+        }
+        .container{
+            background: black;
+            height: auto;
+            color: white;
+        }
+        .content-container{
+            margin-left: 10vh;
+        }
+        .feature-content{
+            height: 50hv;
+            background: tomato;
+        }
+        .row1{
+            position: relative;
+            top: 10px;
+            margin-left: 10px;
+            text-align: center;
+            padding: 5px;
+            background: black;
+        }
+        img{
+            width: 20%;
+            border: 1px solid whitesmoke;
+            border-radius: 5px;
+        }
+        .row2{
+            margin: 15px;
+            text-indent: 10px;
+        }
+        .row3{
+            text-align: center;
+            background: black;
+        }
+        button{
+            width: 130px;
+            text-align: center;
+            padding: 10px;
+            background: red;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        button:hover{
+            background: lightblue;
+            color: white;
+        }       
+    </style>
+</head>
+<body>
+     
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container"><h1 class="logo">ChilingTimes!!</h1></div>
+             <div class="menu-container">
+                 <ul class="menu-list">
+                     <li class="menu-list-item active">Home</li>
+                      <li class="menu-list-item">Movies</li>
+                       <li class="menu-list-item">Series</li>
+                        <li class="menu-list-item">Popular</li>
+                         <li class="menu-list-item">Trends</li>
+                 </ul>
+             </div>
+              <div class="profile-container">
+                  <img class="profile-picture" src="You.jpg">
+                  <div class="profile-text-container">
+                        <span class="profile-text">Profile</span>
+                        <i class="fa-solid fa-caret-down"></i>
+                  </div>
+              </div>
+              <div class="toggle">
+                  <i class="fa-solid fa-moon toggle-icon"></i>
+                  <i class="fa-solid fa-sun toggle-icon"></i>
+                  <div class="toggle-ball"></div>
+              </div>
+                          
+        </div>
+    </div>
+    <div class="sidebar">
+        <i class="left-menu-icon fa-solid fa-house"></i>
+        <i class="left-menu-icon fa-solid fa-magnifying-glass"></i>
+        <i class="left-menu-icon fa-solid fa-users"></i>
+        <i class="left-menu-icon fa-regular fa-bookmark"></i>
+        <i class="left-menu-icon fa-solid fa-tv"></i>
+        <i class="left-menu-icon fa-solid fa-hourglass-start"></i>
+        <i class="left-menu-icon fa-solid fa-cart-shopping"></i>
+    </div>
+    <div class="container">
+        <div class="content-container">
+            <div class="feature-content">
+                </div>
+                    
+                    <div class="row1">
+                        <img src="27.jpg">
+                        <h2>Amanda</h2>
+                    </div>
+                    <div class="row2">
+                        <h2>Movie info</h2>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <br>
+                        <p><bold>Rating:  4/5</bold></p>
+                        <p>Director:  Dominik Moll</p>
+                        <p>Genre: Mystery & thriller, Crime, Drama</p>
+                        <p>Runtime: 1h 55m</p>
+                        <p>Language: English</p>
+                    </div>
+                     <div class="row3">
+                         <button>Downlaod</button>
+                     </div>   
+                </div>
+        </div>
+    </div>
+</body>
+</html>

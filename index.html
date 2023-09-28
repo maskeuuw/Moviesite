@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Movie Site</title>
+    <style>
+        *{
+            background: black;
+            margin: 0;
+        }
+        body{
+            font-family: 'Roboto',sans-serif;
+        }
+        footer{
+            text-align: center;
+            color: white;
+
+        }
+        .navbar{
+            width: 100%;
+            height: 50px;
+            background: black;
+        }
+        .navbar-container{
+            display: flex;
+            align-items: center;
+            padding: 0 50px;
+            height: 100%;
+            color: white;
+            font-family: 'Sen',sans-serif;
+        }
+        .logo-container{
+            flex: 1;
+        }
+        .logo{
+            font-family: 'Sen',sans-serif;
+            font-size: 30px;
+            color: red;
+        }
+         .menu-container{
+            flex: 6;
+            cursor: pointer;
+        }
+        .menu-list{
+            display: flex;
+            list-style: none;
+        }
+        .menu-list-item{
+            margin-right:30px ;
+        }
+        .menu-list-item.active{
+            font-weight: bold;
+        }
+         .profile-container{
+            flex: 2;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .profile-text-container{
+            margin: 0 20px;
+        }
+        .sidebar{
+            width: 50px;
+            height: 100%;
+            background: black;
+            position: fixed;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 60px;
+        }
+        .toggle{
+            width: 40px;
+            height: 20px;
+            background: white;
+            border-radius: 30px;
+            display: flex;
+            justify-content:space-around ;
+            align-items: center;
+            position: relative;
+        }
+        .toggle-icon{
+            color: goldenrod;
+
+        }
+        .toggle-ball{
+            width: 18px;
+            height: 18px;
+            background: black;
+            position: absolute;
+            right: 1px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .profile-picture{
+            width: 33px;
+            height: 33px;
+            border-radius: 50%;
+            object-fit: cover;
+
+        }
+        .left-menu-icon{
+            color: white;
+            font-size: 20px;
+            margin-bottom: 30px;
+            margin-bottom: 60px;
+        }
+        .container{
+            background: #151515;
+            height: calc(100vh - 50px);
+            color: white;
+        }
+        .content-container{
+            margin-left: 0vh;
+        }  
+        .row:after{
+                clear: both;
+                display: table;
+                content: "";
+            }
+            .movie{
+                padding: 40px;
+                margin: 10px;
+                float: left;
+                position: relative;
+                float: right;
+            }
+            .movie img{
+                height: 155px;
+                width: 105px;
+                position: relative;
+            }
+            .movie h2{
+                font-size: 10px;
+                color: white;
+                position: absolute;
+            }
+            .movie:hover{
+                transform: scale(1.2);
+                margin-left: 0 30px;
+                opacity: 0.5;
+            }
+
+            .movie-list-item-button {
+                padding: 10px;
+                background-color: darkred;
+                color: white;
+                border-radius: 10px;
+                outline: none;
+                border: none;
+                cursor: pointer;
+                position: absolute;
+                bottom: 5px;
+                left: 50px;
+                opacity: 5px;
+                transition: 1s all ease-in-out
+            }
+            .GG{
+                 background-color: #333;
+                  padding: 0 10px;
+                  font-size: 32px;
+                  font-weight: bold;
+                  position: absolute;
+                  top: 10%;
+                  left: 50px;
+                  opacity: 0;
+                  transition: 1s all ease-in-out;
+                }
+            }
+        .menu-list{
+            text-decoration: none;
+        }
+        @media screen and (max-width: 680px){
+            .colright,.colleft{
+                float: none;
+                width: 100%;
+            }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container"><h1 class="logo">ChillingTimes!!</h1></div>
+             <div class="menu-container">
+                 <ul class="menu-list">
+                     <li class="menu-list-item active">Home</li>
+                      <li class="menu-list-item">Movies</li>
+                       <li class="menu-list-item">Series</li>
+                        <li class="menu-list-item">Popular</li>
+                         <li class="menu-list-item">Trends</li>
+                 </ul>
+             </div>
+              <div class="profile-container">
+                  <img class="profile-picture" src="MovieImg/You.jpg">
+                  <div class="profile-text-container">
+                        <span class="profile-text">Profile</span>
+                        <i class="fa-solid fa-caret-down"></i>
+                  </div>
+              </div>
+              <div class="toggle">
+                  <i class="fa-solid fa-moon toggle-icon"></i>
+                  <i class="fa-solid fa-sun toggle-icon"></i>
+                  <div class="toggle-ball"></div>
+              </div>
+                          
+        </div>
+    </div>
+    <div class="sidebar">
+        <i class="left-menu-icon fa-solid fa-house"></i>
+        <i class="left-menu-icon fa-solid fa-magnifying-glass"></i>
+        <i class="left-menu-icon fa-solid fa-users"></i>
+        <i class="left-menu-icon fa-regular fa-bookmark"></i>
+        <i class="left-menu-icon fa-solid fa-tv"></i>
+        <i class="left-menu-icon fa-solid fa-hourglass-start"></i>
+        <i class="left-menu-icon fa-solid fa-cart-shopping"></i>
+    </div>
+    <div class="container">
+        <div class="content-container">
+            <div class="row">
+                <div class="col">
+                <div class="movie">
+                    <img src="MovieImg/Movie1.jpg">
+                    <a href=""><h2 class="GG">Air</h2></a>
+                     <button onclick="window.location.href='Group/40m.html'" class="movie-list-item-button">Watch</button>
+                </div>
+                <div class="movie">
+                    <img src="MovieImg/Movie2.jpg">
+                    <a href=""><h2 class="GG">OPPEN HEIMER</h2></a>        
+                     <button onclick="window.location.href='Group/39m.html'" class="movie-list-item-button">Watch</button>     
+                </div>
+                <div class="movie">
+                    <img src="MovieImg/Movie3.jpg">
+                    <a href=""><h2 class="GG">AFTER LOVE</h2></a>                   
+                    <button onclick="window.location.href='Group/38m.html'" class="movie-list-item-button">Watch</button>
+                </div>
+                <div class="movie">
+                    <img src="MovieImg/Movie4.jpg">
+                    <a href=""><h2 class="GG">THE NIGHT OF THE 12TH</h2></a>
+                    <button onclick="window.location.href='Group/37m.html'" class="movie-list-item-button">Watch</button>
+                </div>
+                <div class="movie">
+                    <img src="MovieImg/Movie5.jpg">
+                    <a href=""><h2 class="GG">Smoking Causes Couching</h2></a>
+                     <button onclick="window.location.href='Group/36m.html'" class="movie-list-item-button">Watch</button>
+                </div>
+                <div class="movie">
+                    <img src="MovieImg/Movie6.jpg">
+                    <a href=""><h2 class="GG">Nimona</h2></a>                 
+                     <button onclick="window.location.href='Group/35m.html'" class="movie-list-item-button">Watch</button>
+                </div>
+                <div class="movie">
+                    <img src="MovieImg/Movie7.jpg">
+                    <a href=""><h2 class="GG">They Cloned Tyrone</h2></a>            
+                     <button onclick="window.location.href='Group/34m.html'" class="movie-list-item-button">Watch</button>      
+                </div>
+            </div>
+                <div class="row">
+                <div class="movie">
+                    <img src="MovieImg/Movie8.jpg">
+                    <a href=""><h2 class="GG">SAINT OMER</h2></a>
+                     <button onclick="window.location.href='Group/33m.html'" class="movie-list-item-button">Watch</button>
+                </div>
+                <div class="movie">
+                    <img src="MovieImg/Movie9.jpg">
+                    <a href=""><h2 class="GG">HOW TO BLOW UP A PIPELINE</h2></a>
+                    <button onclick="window.location.href='Group/32m.html'" class="movie-list-item-button">Watch</button>
+                </div>
+                <div class="movie">
+                    <img src="MovieImg/Movie10.jpg">
+                    <a href=""><h2 class="GG">Air</h2></a>                
+                     <button onclick="window.location.href='Group/31m.html'" class="movie-list-item-button">Watch</button>
+                </div>
+                <div class="movie">
+                    <img src="MovieImg/Movie11.jpg">
+                    <a href=""><h2 class="GG">Sisu</h2></a>               
+                     <button onclick="window.location.href='Group/30m.html'" class="movie-list-item-button">Watch</button>
+                </div>
+                <div class="movie">
+                    <img src="MovieImg/Movie12.jpg">
+                    <a href=""><h2 class="GG">You hurt my feeling</h2></a>
+                    <button onclick="window.location.href='Group/29m.html'" class="movie-list-item-button">Watch</button>
+                </div>
+                <div class="movie">
+                    <img src="MovieImg/Movie13.jpg">
+                    <a href=""><h2 class="GG">John Wick</h2></a>
+                     <button onclick="window.location.href='Group/28m.html'" class="movie-list-item-button">Watch</button>
+                </div>
+                <div class="movie">
+                    <img src="MovieImg/Movie14.jpg">
+                    <a href=""><h2 class="GG">Amanda</h2></a>               
+                     <button onclick="window.location.href='Group/27m.html'" class="movie-list-item-button">Watch</button>
+                </div>
+            </div>
+                <div class="col">
+                <div class="movie">
+                    <img src="MovieImg/Movie15.jpg">
+                    <a href=""><h2 class="GG">Attachment</h2></a>                 
+                     <button onclick="window.location.href='Group/26m.html'" class="movie-list-item-button">Watch</button>
+                </div>
+                <div class="movie">
+                    <img src="MovieImg/Movie16.jpg">
+                    <a href=""><h2 class="GG">Birth/Rebirth</h2></a>
+                     <button onclick="window.location.href='Group/25m.html'" class="movie-list-item-button">Watch</button>
+                </div>
+                <div class="movie">
+                    <img src="MovieImg/Movie17.jpg">
+                    <a href=""><h2 class="GG">Blue Jean</h2></a>
+                     <button onclick="window.location.href='Group/24m.html'" class="movie-list-item-button">Watch</button>
+                </div>
+                <div class="movie">
+                    <img src="MovieImg/Movie18.jpg">
+                    <a href=""><h2 class="GG">Talk To Me</h2></a>
+                    <button onclick="window.location.href='Group/23m.html'" class="movie-list-item-button">Watch</button>                     
+                </div>
+                <div class="movie">
+                    <img src="MovieImg/Movie19.jpg">
+                    <a href=""><h2 class="GG">Falcon Lake</h2></a>
+                     <button onclick="window.location.href='Group/22m.html'" class="movie-list-item-button">Watch</button>
+                </div>
+                <div class="movie">
+                    <img src="MovieImg/Movie20.jpg">
+                    <a href=""><h2 class="GG">EarthMama</h2></a>
+                     <button onclick="window.location.href='Group/21m.html'" class="movie-list-item-button">Watch</button>    
+                </div>
+                <div class="movie">
+                    <img src="MovieImg/Movie21.jpg">
+                    <a href=""><h2 class="GG">Barbie</h2></a>
+                     <button onclick="window.location.href='Group/41m.html'" class="movie-list-item-button">Watch</button>
+                     
+                </div>
+
+            </div>
+
+                
+        </div>
+    </div> 
+</div>
+<footer>
+        <h2>Contant Us</h2>
+        <p>Phone number: 95+887788170</p>
+        <p>Email:davekick1890@gmail.com</p>
+</footer>
+</body>
+</html>
